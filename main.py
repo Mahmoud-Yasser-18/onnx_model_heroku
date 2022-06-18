@@ -6,9 +6,9 @@ app = Flask(__name__)
 ### Web Pages ###
 @app.route("/")
 def home():
-    file_name="a.wav"
-    y, sr = librosa.load(file_name,sr=None)
-    print(pipeline_audio(y))
+    # file_name="a.wav"
+    # y, sr = librosa.load(file_name,sr=None)
+    # print(pipeline_audio(y))
     return render_template("home.html")
 
 @app.route("/about")
