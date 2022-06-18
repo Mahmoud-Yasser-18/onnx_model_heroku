@@ -1,15 +1,17 @@
 from flask import Flask
 from predict import pipeline_audio 
-import librosa
+import scipy.io.wavfile
 app = Flask(__name__)
 
 ### Web Pages ###
 @app.route("/")
 def home():
     print("\n\nhere\n\n")
-    file_name="a.wav"
-    y, sr = librosa.load(file_name,sr=None)
-    print(pipeline_audio(y))
+    
+
+    rate, data = scipy.io.wavfile.read('a.wav')
+
+    print(pipeline_audio(data))
     # return render_template("home.html")
 
 @app.route("/about")
