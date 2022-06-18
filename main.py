@@ -6,6 +6,7 @@ app = Flask(__name__)
 ### Web Pages ###
 @app.route("/")
 def home():
+    print("\n\nhere\n\n")
     file_name="a.wav"
     y, sr = librosa.load(file_name,sr=None)
     print(pipeline_audio(y))
@@ -13,6 +14,8 @@ def home():
 
 @app.route("/about")
 def about():
+    print("\n\nhere\n\n")
+
     pass
     # return render_template("about.html")
 
